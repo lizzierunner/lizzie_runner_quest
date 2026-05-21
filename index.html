@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IRON LIZZIE & SARAH — RUNNING FROM DEADLINES</title>
+<title>LIZZIES TRAINING QUEST — RUNNING FROM DEADLINES</title>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -1464,9 +1464,9 @@ body::after {
   <div class="splash-content">
     <div class="splash-issue">PRESENTING THE INCREDIBLE</div>
     <div class="splash-hero-silhouette">&#x1F9B8;&#x200D;&#x2640;&#xFE0F;&#x1F9B8;&#x200D;&#x2640;&#xFE0F;</div>
-    <div class="splash-title">IRON LIZZIE<br>&amp; SARAH</div>
+    <div class="splash-title">LIZZIES<br>TRAINING QUEST</div>
     <div class="splash-sub">RUNNING FROM DEADLINES</div>
-    <div class="splash-tagline">"They don't run FROM danger -- they run THROUGH it. Together."</div>
+    <div class="splash-tagline">"She doesn't run FROM danger -- she runs THROUGH it."</div>
     <div class="splash-cta">-- TAP TO BEGIN YOUR ORIGIN STORY --</div>
   </div>
 </div>
@@ -1489,7 +1489,7 @@ body::after {
         <span>VOL. 1 &middot; ISSUE #<span id="issueNum">1</span></span>
         <span id="dateDisplay">MARCH 2026</span>
       </div>
-      <h1>IRON LIZZIE<br>&amp; SARAH</h1>
+      <h1>LIZZIES<br>TRAINING QUEST</h1>
       <div class="masthead-sub">&#x26A1; RUNNING FROM DEADLINES &#x26A1;</div>
     </div>
 
@@ -1535,7 +1535,7 @@ body::after {
 
     <!-- SPEECH BUBBLE -->
     <div class="speech-bubble">
-      <div class="bubble-who">&#x1F9B8;&#x200D;&#x2640;&#xFE0F; IRON LIZZIE & SARAH SAY:</div>
+      <div class="bubble-who">&#x1F9B8;&#x200D;&#x2640;&#xFE0F; LIZZIE SAYS:</div>
       <div class="bubble-text" id="motoText">Loading mission briefing...</div>
     </div>
 
@@ -1550,17 +1550,17 @@ body::after {
     <div class="story-recap">
       <div class="recap-title">&#x1F4D6; THE STORY SO FAR...</div>
       <div class="recap-text" id="recapText">
-        Our heroes <em>Iron Lizzie &amp; Sarah</em> have begun their quest. The virtual 10K looms on the horizon like a supervillain's fortress. But together, nothing can stop them...
+        Iron Lizzie has begun her quest. The virtual 10K looms on the horizon like a supervillain's fortress. With grit and consistency, nothing can stop her...
       </div>
       <div class="recap-next" id="recapNext">NEXT ISSUE: THE TRAINING BEGINS! &rarr;</div>
     </div>
   </div>
 
-  <div class="page-number">-- PAGE 1 OF THE IRON LIZZIE &amp; SARAH SAGA --</div>
+  <div class="page-number">-- PAGE 1 OF LIZZIES TRAINING QUEST --</div>
 </div>
 
 <script>
-var STORAGE_KEY = 'ironlizzie_sarah_v1';
+var STORAGE_KEY = 'lizzies_training_quest_v2';
 var WEEK_DAYS = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 var MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 var RACE_DATE = new Date('2026-06-13T00:00:00');
@@ -1578,7 +1578,7 @@ var RANKS = [
   { min: 600,  name: 'CITY DEFENDER',   emoji: '\uD83C\uDFD9' },
   { min: 1000, name: 'SUPER HERO',     emoji: '\uD83D\uDCA5' },
   { min: 1500, name: 'ULTRA LEGEND',   emoji: '\uD83C\uDF1F' },
-  { min: 2000, name: 'IRON LIZZIE & SARAH', emoji: '\uD83E\uDDB8\u200D\u2640\uFE0F' },
+  { min: 2000, name: 'LIZZIE', emoji: '\uD83E\uDDB8\u200D\u2640\uFE0F' },
 ];
 
 var ACHIEVEMENTS = [
@@ -1587,22 +1587,22 @@ var ACHIEVEMENTS = [
   { id: 'five_streak',   check: function(s){ return s.streak >= 5; }, text: '\uD83D\uDD25\uD83D\uDD25 5-DAY STREAK! UNSTOPPABLE!' },
   { id: 'half_way',      check: function(s){ return s.completedCount >= Math.floor(s.totalDays / 2); }, text: '\u2B50 HALFWAY HERO! 50% DONE!' },
   { id: 'ten_done',      check: function(s){ return s.completedCount >= 10; }, text: '\uD83D\uDCAA 10 MISSIONS CRUSHED!' },
-  { id: 'twenty_done',   check: function(s){ return s.completedCount >= 20; }, text: '\uD83D\uDE80 20 MISSIONS! UNSTOPPABLE DUO!' },
+  { id: 'twenty_done',   check: function(s){ return s.completedCount >= 20; }, text: '\uD83D\uDE80 20 MISSIONS! UNSTOPPABLE HERO!' },
   { id: 'long_run',      check: function(s){ return s.longRunsDone >= 1; }, text: '\uD83C\uDF05 FIRST LONG RUN CONQUERED!' },
   { id: 'race_dist',     check: function(s){ return s.longRunsDone >= 3; }, text: '\uD83C\uDFC6 RACE DISTANCE UNLOCKED!' },
   { id: 'half_marathon', check: function(s){ return s.longRunsDone >= 6; }, text: '\uD83C\uDFC6\uD83D\uDD25 HALF MARATHON READY! 13.1 IN SIGHT!' },
 ];
 
 var STORY_BEATS = [
-  { min: 0,  text: 'Our heroes <em>Iron Lizzie &amp; Sarah</em> have begun their quest. The virtual 10K looms on the horizon like a supervillain\'s fortress. Together they\'ll conquer it \u2014 one run at a time...', next: 'NEXT ISSUE: THE TRAINING BEGINS! \u2192' },
-  { min: 5,  text: '<em>Iron Lizzie &amp; Sarah</em> have found their rhythm! The dynamic duo is building a base. Walk breaks are their SECRET WEAPON. The citizens are watching...', next: 'NEXT ISSUE: THE STRENGTH ARC! \u2192' },
-  { min: 12, text: 'Weeks of training conquered! The duo\'s power level is rising. Each mile is a chapter in their origin story. The Dementors of self-doubt scatter before them...', next: 'NEXT ISSUE: THE LONG RUN CHALLENGE! \u2192' },
-  { min: 20, text: 'The halfway point! <em>Lizzie &amp; Sarah</em> stand atop the training montage of their lives. They\'ve run farther than they ever imagined. The 10K villain is starting to look... beatable.', next: 'NEXT ISSUE: THE FINAL TRAINING ARC! \u2192' },
-  { min: 35, text: '<em>Iron Lizzie &amp; Sarah</em> have become UNSTOPPABLE. Race distance conquered in training. The 10K was a victory — now the half marathon looms. The duo eyes a new summit.', next: 'THE FINALE: VIRTUAL HALF MARATHON \u2192 AUG 9! \uD83C\uDFC6' },
+  { min: 0,  text: 'Iron Lizzie has begun her quest. The virtual 10K looms on the horizon like a supervillain\'s fortress. She\'ll conquer it \u2014 one run at a time...', next: 'NEXT ISSUE: THE TRAINING BEGINS! \u2192' },
+  { min: 5,  text: '<em>Iron Lizzie</em> has found her rhythm! Base mileage is building. Walk breaks are her SECRET WEAPON. The citizens are watching...', next: 'NEXT ISSUE: THE STRENGTH ARC! \u2192' },
+  { min: 12, text: 'Weeks of training conquered! Lizzie\'s power level is rising. Each mile is a chapter in her origin story. The Dementors of self-doubt scatter before her...', next: 'NEXT ISSUE: THE LONG RUN CHALLENGE! \u2192' },
+  { min: 20, text: 'The halfway point! <em>Lizzie</em> stands atop the training montage of her life. She\'s run farther than she ever imagined. The 10K villain is starting to look... beatable.', next: 'NEXT ISSUE: THE FINAL TRAINING ARC! \u2192' },
+  { min: 35, text: '<em>Iron Lizzie</em> has become UNSTOPPABLE. Race distance conquered in training. The 10K was a victory — now the half marathon looms. Lizzie eyes a new summit.', next: 'THE FINALE: VIRTUAL HALF MARATHON \u2192 AUG 9! \uD83C\uDFC6' },
 ];
 
 // ===== 11-WEEK TRAINING PLAN: Mar 27 - Jun 13, 2026 =====
-// Pattern per week: Mon=Run, Tue=Strength A, Wed=Run, Thu=Strength B, Fri=Rest, Sat=Long Run, Sun=Rest
+// Pattern per week: 4 run days total (including long run), while preserving garage-gym strength days
 // Starting today (Fri Mar 27) with a partial first week
 var planDays = [
   // === WEEK 1 (Partial — Fri Mar 27 - Sun Mar 29) ===
@@ -1820,7 +1820,7 @@ var planDays = [
   { date: '2026-04-23', type: 'strength', title: 'STRENGTH \u00B7 DAY B', icon: '\uD83D\uDCAA', headerClass: 'strength-header', btnClass: 'strength-btn', pow: 'STRONG!', moto: 'Upper body. Strong arms carry you to the finish line. \uD83C\uDFAC', distance: '', duration: '40\u201350 min', intervals: 'UPPER FOCUS', xp: 35,
     steps: [ { text: 'Movie on \uD83C\uDFAC', time: '1 min' }, { text: 'Warm-up: Arm circles + band pull-apart', time: '2 min' }, { text: 'DB Row \u2014 3\u00D712 each', time: '6 min', bw: '\uD83C\uDFE0 BW: Superman Hold 3\u00D730s' }, { text: 'Bench Press \u2014 3\u00D710', time: '6 min', bw: '\uD83C\uDFE0 BW: Push-Up 3\u00D715' }, { text: 'Overhead Press \u2014 3\u00D710', time: '5 min', bw: '\uD83C\uDFE0 BW: Pike Push-Up 3\u00D710' }, { text: 'Face Pull \u2014 3\u00D715', time: '5 min', bw: '\uD83C\uDFE0 BW: YTW Raises 3\u00D710 each' }, { text: 'Plank \u2014 3\u00D71 min', time: '4 min' }, { text: 'Stretch', time: '3 min' } ] },
   { date: '2026-04-24', type: 'rest', title: 'REST DAY', icon: '\uD83D\uDE34', headerClass: 'rest-header', btnClass: '', pow: 'ZZZ', moto: 'Rest up for 4-miler! \uD83D\uDD0B', distance: '', duration: 'FULL REST', intervals: 'RECOVERY MODE', xp: 10, steps: [ { text: 'Hydrate \uD83D\uDCA7', time: 'all day' }, { text: 'Foam roll', time: '10 min' }, { text: 'Early night', time: 'evening' } ] },
-  { date: '2026-04-25', type: 'longrun', title: 'LONG RUN \u00B7 4 MI', icon: '\u2B50', headerClass: 'longrun-header', btnClass: 'long-btn', pow: 'EPIC!!', moto: '4 MILES! You\'re past the halfway mark to 10K. The duo is becoming unstoppable! \uD83D\uDE80', steadyMoto: 'Steady 4 miles! Past halfway to race distance. Legends in the making! \uD83D\uDE80', distance: '4 miles', duration: '~55 min', intervals: '60s RUN / 30s WALK', xp: 60,
+  { date: '2026-04-25', type: 'longrun', title: 'LONG RUN \u00B7 4 MI', icon: '\u2B50', headerClass: 'longrun-header', btnClass: 'long-btn', pow: 'EPIC!!', moto: '4 MILES! You\'re past the halfway mark to 10K. Lizzie is becoming unstoppable! \uD83D\uDE80', steadyMoto: 'Steady 4 miles! Past halfway to race distance. Legends in the making! \uD83D\uDE80', distance: '4 miles', duration: '~55 min', intervals: '60s RUN / 30s WALK', xp: 60,
     steps: [ { text: 'Hydrate 16oz \uD83D\uDCA7', time: '5 min' }, { text: '8 min warmup walk', time: '8 min' }, { text: 'Galloway: 60s run / 30s walk for 4 mi', time: '40\u201345 min' }, { text: 'Water at mile 2', time: 'mid-run' }, { text: '5 min cooldown', time: '5 min' }, { text: 'Full stretch', time: '5 min' } ],
     steadySteps: [ { text: 'Hydrate 16oz \uD83D\uDCA7', time: '5 min' }, { text: '8 min warmup walk', time: '8 min' }, { text: 'Run 4 miles at steady pace', time: '44\u201355 min' }, { text: 'Water at mile 2', time: 'mid-run' }, { text: '5 min cooldown', time: '5 min' }, { text: 'Full stretch', time: '5 min' } ] },
   { date: '2026-04-26', type: 'rest', title: 'REST DAY', icon: '\uD83D\uDE34', headerClass: 'rest-header', btnClass: '', pow: 'ZZZ', moto: '4 miles done! Heroes rest. \uD83E\uDD73', distance: '', duration: 'FULL REST', intervals: 'RECOVERY MODE', xp: 10, steps: [ { text: 'Hydrate & rest \uD83D\uDCA7', time: 'all day' } ] },
@@ -1934,7 +1934,7 @@ var planDays = [
   { date: '2026-06-10', type: 'rest', title: 'REST DAY', icon: '\uD83D\uDE34', headerClass: 'rest-header', btnClass: '', pow: 'ZZZ', moto: '3 days! Rest and visualize. \u26A1', distance: '', duration: 'FULL REST', intervals: 'RECOVERY MODE', xp: 10, steps: [ { text: 'Hydrate & eat well \uD83D\uDCA7', time: 'all day' }, { text: 'Prep race day nutrition', time: 'evening' } ] },
   { date: '2026-06-11', type: 'rest', title: 'REST DAY', icon: '\uD83D\uDE34', headerClass: 'rest-header', btnClass: '', pow: 'ZZZ', moto: '2 days! The calm before the storm. \u26A1\uD83C\uDF29\uFE0F', distance: '', duration: 'FULL REST', intervals: 'RECOVERY MODE', xp: 10, steps: [ { text: 'Hydrate \uD83D\uDCA7', time: 'all day' }, { text: 'Lay out everything for race day', time: 'evening' }, { text: 'Early night!', time: '9 PM' } ] },
   { date: '2026-06-12', type: 'rest', title: 'PRE-RACE REST', icon: '\uD83D\uDE34', headerClass: 'rest-header', btnClass: '', pow: '\u26A1', moto: 'TOMORROW IS RACE DAY! Light walk only. Eat well. Sleep well. You are READY. \uD83C\uDFC6', distance: '', duration: 'LIGHT WALK ONLY', intervals: 'PRE-RACE', xp: 10, steps: [ { text: 'Light 10 min walk', time: '10 min' }, { text: 'Carb-load dinner \uD83C\uDF5D', time: 'dinner' }, { text: 'Lay out race outfit & gear', time: 'evening' }, { text: 'Bed early \u2014 you\'re ready!', time: '9 PM' } ] },
-  { date: '2026-06-13', type: 'longrun', title: 'VIRTUAL 10K RACE!', icon: '\uD83C\uDFC6', headerClass: 'longrun-header', btnClass: 'long-btn', pow: 'RACE!!', moto: 'THIS IS IT! 6.2 miles. Lizzie & Sarah vs The Deadline. You trained for this. You are READY. LET\'S GO!! \uD83C\uDFC6\uD83D\uDD25\u26A1', steadyMoto: 'RACE DAY! 6.2 miles steady state. Everything you\'ve trained for comes down to NOW. \uD83C\uDFC6\uD83D\uDD25', distance: '6.2 miles (10K)', duration: 'RACE DAY!', intervals: '60s RUN / 30s WALK', xp: 150,
+  { date: '2026-06-13', type: 'longrun', title: 'VIRTUAL 10K RACE!', icon: '\uD83C\uDFC6', headerClass: 'longrun-header', btnClass: 'long-btn', pow: 'RACE!!', moto: 'THIS IS IT! 6.2 miles. Lizzie vs The Deadline. You trained for this. You are READY. LET\'S GO!! \uD83C\uDFC6\uD83D\uDD25\u26A1', steadyMoto: 'RACE DAY! 6.2 miles steady state. Everything you\'ve trained for comes down to NOW. \uD83C\uDFC6\uD83D\uDD25', distance: '6.2 miles (10K)', duration: 'RACE DAY!', intervals: '60s RUN / 30s WALK', xp: 150,
     steps: [
       { text: 'Wake up, hydrate 16oz, light breakfast \uD83D\uDCA7', time: '60 min before' },
       { text: 'Gear up \u2014 race day outfit ON', time: '30 min before' },
@@ -2019,9 +2019,67 @@ var planDays = [
   { date: '2026-08-06', type: 'rest', title: 'REST', icon: '\uD83D\uDE34', headerClass: 'rest-header', btnClass: '', pow: 'ZZZ', moto: 'Taper continues.', distance: '', duration: 'REST', intervals: 'RECOVERY', xp: 10, steps: [ { text: 'Hydrate', time: 'all day' } ] },
   { date: '2026-08-07', type: 'run', title: 'SHAKEOUT', icon: '\uD83C\uDFC3', headerClass: 'run-header', btnClass: 'run-btn', pow: 'EASY', moto: '1.5 miles easy. Stay calm.', steadyMoto: '1.5 miles easy.', distance: '1.5 miles', duration: '20 min', intervals: '60s RUN / 30s WALK', xp: 20, steps: [ { text: 'Easy 1.5 miles', time: '15 min' }, { text: 'Stretch', time: '5 min' } ] },
   { date: '2026-08-08', type: 'rest', title: 'PRE-RACE REST', icon: '\uD83D\uDE34', headerClass: 'rest-header', btnClass: '', pow: 'ZZZ', moto: 'Final rest — carb load and sleep early.', distance: '', duration: 'REST', intervals: 'PRE-RACE', xp: 10, steps: [ { text: 'Carb-load dinner', time: 'dinner' } ] },
-  { date: '2026-08-09', type: 'longrun', title: 'VIRTUAL HALF MARATHON!', icon: '\uD83C\uDFC6', headerClass: 'longrun-header', btnClass: 'long-btn', pow: 'RACE!!', moto: 'HALF MARATHON RACE DAY! 13.1 miles. Lizzie & Sarah take on the next challenge — go claim it!', steadyMoto: 'RACE DAY! 13.1 miles steady state. Trust your training and fuel smart.', distance: '13.1 miles (Half Marathon)', duration: 'RACE DAY!', intervals: 'Galloway optional', xp: 500,
+  { date: '2026-08-09', type: 'longrun', title: 'VIRTUAL HALF MARATHON!', icon: '\uD83C\uDFC6', headerClass: 'longrun-header', btnClass: 'long-btn', pow: 'RACE!!', moto: 'HALF MARATHON RACE DAY! 13.1 miles. Lizzie takes on the next challenge — go claim it!', steadyMoto: 'RACE DAY! 13.1 miles IFIT pace. Trust your training and fuel smart.', distance: '13.1 miles (Half Marathon)', duration: 'RACE DAY!', intervals: 'Galloway optional', xp: 500,
     steps: [ { text: 'Hydrate & light breakfast', time: '60 min before' }, { text: 'Gear up', time: '30 min before' }, { text: '10 min warmup walk', time: '10 min' }, { text: 'START THE RACE! Keep steady or use run/walk as planned', time: 'LET\'S GO' }, { text: 'Fuel/water every 3–4 miles', time: 'during' }, { text: 'Finish line!', time: 'VICTORY' }, { text: 'Cooldown + celebrate', time: '10 min' } ] },
 ];
+
+function addFourthRunDayToWeek(weekDays) {
+  function runCount() {
+    return weekDays.filter(function(d){ return d.type === 'run' || d.type === 'longrun'; }).length;
+  }
+
+  while (runCount() < 4) {
+    var preferredRest = weekDays.find(function(d){
+      var dow = new Date(d.date + 'T12:00:00').getDay();
+      return d.type === 'rest' && dow === 5;
+    }) || weekDays.find(function(d){ return d.type === 'rest'; });
+
+    if (!preferredRest) return;
+
+    preferredRest.type = 'run';
+    preferredRest.title = 'IFIT / GALLOWAY RUN';
+    preferredRest.icon = '🏃‍♀️';
+    preferredRest.headerClass = 'run-header';
+    preferredRest.btnClass = 'run-btn';
+    preferredRest.pow = 'BONUS!';
+    preferredRest.moto = 'Fourth run day unlocked. Keep it easy outdoors with Galloway or cue up an IFIT session and cruise.';
+    preferredRest.steadyMoto = 'Fourth run day unlocked. Start an IFIT guided run and keep the effort easy.';
+    preferredRest.distance = '2–3 miles';
+    preferredRest.duration = '25–35 min';
+    preferredRest.intervals = 'GALLOWAY OR IFIT';
+    preferredRest.xp = Math.max(preferredRest.xp || 10, 30);
+    preferredRest.steps = [
+      { text: 'Pick mode: Galloway outdoor or IFIT guided run 📱', time: '1 min' },
+      { text: '5 min warmup walk', time: '5 min' },
+      { text: 'Galloway outdoor: 60s run / 30s walk for 2–3 miles', time: '20–28 min' },
+      { text: '3 min cooldown walk', time: '3 min' },
+      { text: 'Light stretch + hydrate', time: '3 min' }
+    ];
+    preferredRest.steadySteps = [
+      { text: 'Launch IFIT run and choose easy effort 📱', time: '1 min' },
+      { text: '5 min warmup walk', time: '5 min' },
+      { text: 'IFIT guided run for 20–25 min (about 2–3 miles)', time: '20–25 min' },
+      { text: '3 min cooldown walk', time: '3 min' },
+      { text: 'Light stretch + hydrate', time: '3 min' }
+    ];
+  }
+}
+
+(function ensureFourRunDays() {
+  var byWeek = {};
+  planDays.forEach(function(day){
+    var d = new Date(day.date + 'T12:00:00');
+    var weekStart = new Date(d);
+    weekStart.setDate(d.getDate() - d.getDay());
+    var weekKey = weekStart.toISOString().split('T')[0];
+    if (!byWeek[weekKey]) byWeek[weekKey] = [];
+    byWeek[weekKey].push(day);
+  });
+
+  Object.keys(byWeek).forEach(function(weekKey){
+    addFourthRunDayToWeek(byWeek[weekKey]);
+  });
+})();
 
 // STATE
 function loadState() {
@@ -2341,17 +2399,17 @@ function renderWorkout() {
   var toggleHTML = '';
   if (hasRunMode) {
     toggleHTML = '<div class="mode-toggle-wrap">' +
-      '<div class="mode-toggle-label">\uD83C\uDFC3 CHOOSE YOUR STYLE</div>' +
+      '<div class="mode-toggle-label">\uD83C\uDFC3 CHOOSE YOUR RUN MODE</div>' +
       '<div class="mode-toggle-btns">' +
         '<button class="mode-btn ' + (currentMode === 'galloway' ? 'mode-active galloway-active' : '') + '" data-mode="galloway">' +
           '<span class="mode-emoji">\u23F1\uFE0F</span>' +
-          '<span class="mode-text">GALLOWAY</span>' +
-          '<span class="mode-sub">60s Run / 30s Walk</span>' +
+          '<span class="mode-text">GALLOWAY OUTDOOR RUN</span>' +
+          '<span class="mode-sub">Outdoor Run-Walk Intervals</span>' +
         '</button>' +
         '<button class="mode-btn ' + (currentMode === 'steady' ? 'mode-active steady-active' : '') + '" data-mode="steady">' +
           '<span class="mode-emoji">\uD83C\uDFC3\u200D\u2640\uFE0F</span>' +
-          '<span class="mode-text">STEADY STATE</span>' +
-          '<span class="mode-sub">One Comfortable Pace</span>' +
+          '<span class="mode-text">IFIT RUN</span>' +
+          '<span class="mode-sub">IFIT Guided Session</span>' +
         '</button>' +
       '</div>' +
     '</div>';
@@ -2366,7 +2424,7 @@ function renderWorkout() {
     blocks += '<span style="font-family:Bangers,cursive;font-size:18px;color:var(--ink);align-self:center;margin-left:4px">\u00B7\u00B7\u00B7</span>';
     intervalHTML = '<div class="interval-visual"><div class="interval-label">\u26A1 INTERVAL PATTERN:</div><div class="interval-blocks">' + blocks + '</div><div class="interval-legend"><span><span class="ileg-dot" style="background:var(--red)"></span>60s RUN</span><span><span class="ileg-dot" style="background:var(--blue);opacity:0.7"></span>30s WALK</span></div></div>';
   } else if ((day.type === 'run' || day.type === 'longrun') && currentMode === 'steady') {
-    intervalHTML = '<div class="interval-visual"><div class="interval-label">\uD83C\uDFC3\u200D\u2640\uFE0F STEADY STATE:</div><div class="interval-blocks"><div class="iblock steady"></div></div><div class="interval-legend"><span><span class="ileg-dot" style="background:var(--green)"></span>ONE COMFORTABLE PACE</span></div></div>';
+    intervalHTML = '<div class="interval-visual"><div class="interval-label">\uD83D\uDCF1 IFIT RUN:</div><div class="interval-blocks"><div class="iblock steady"></div></div><div class="interval-legend"><span><span class="ileg-dot" style="background:var(--green)"></span>IFIT GUIDED PACE</span></div></div>';
   }
 
   // DISTANCE BADGE
@@ -2377,7 +2435,7 @@ function renderWorkout() {
 
   // SELECT STEPS based on mode
   var activeSteps = (currentMode === 'steady' && day.steadySteps) ? day.steadySteps : day.steps;
-  var subtitleText = day.duration + (day.distance ? ' \u00B7 ' + day.distance : '') + (hasRunMode ? ' \u00B7 ' + (currentMode === 'steady' ? 'STEADY STATE' : 'GALLOWAY') : '');
+  var subtitleText = day.duration + (day.distance ? ' \u00B7 ' + day.distance : '') + (hasRunMode ? ' \u00B7 ' + (currentMode === 'steady' ? 'IFIT RUN' : 'GALLOWAY OUTDOOR RUN') : '');
 
   var stepsHTML = activeSteps.map(function(step, i) {
     var isChecked = checkedSteps[i];
