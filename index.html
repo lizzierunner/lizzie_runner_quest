@@ -2037,28 +2037,20 @@ function addFourthRunDayToWeek(weekDays) {
     if (!preferredRest) return;
 
     preferredRest.type = 'run';
-    preferredRest.title = 'IFIT / GALLOWAY RUN';
+    preferredRest.title = 'OUTDOOR EASY RUN';
     preferredRest.icon = '🏃‍♀️';
     preferredRest.headerClass = 'run-header';
     preferredRest.btnClass = 'run-btn';
     preferredRest.pow = 'BONUS!';
-    preferredRest.moto = 'Fourth run day unlocked. Keep it easy outdoors with Galloway or cue up an IFIT session and cruise.';
-    preferredRest.steadyMoto = 'Fourth run day unlocked. Start an IFIT guided run and keep the effort easy.';
+    preferredRest.moto = 'Fourth run day unlocked. Keep this one easy and outside.';
     preferredRest.distance = '2–3 miles';
     preferredRest.duration = '25–35 min';
-    preferredRest.intervals = 'GALLOWAY OR IFIT';
+    preferredRest.intervals = '60s RUN / 30s WALK';
     preferredRest.xp = Math.max(preferredRest.xp || 10, 30);
     preferredRest.steps = [
-      { text: 'Pick mode: Galloway outdoor or IFIT guided run 📱', time: '1 min' },
+      { text: 'Head outside and pick an easy route', time: '1 min' },
       { text: '5 min warmup walk', time: '5 min' },
       { text: 'Galloway outdoor: 60s run / 30s walk for 2–3 miles', time: '20–28 min' },
-      { text: '3 min cooldown walk', time: '3 min' },
-      { text: 'Light stretch + hydrate', time: '3 min' }
-    ];
-    preferredRest.steadySteps = [
-      { text: 'Launch IFIT run and choose easy effort 📱', time: '1 min' },
-      { text: '5 min warmup walk', time: '5 min' },
-      { text: 'IFIT guided run for 20–25 min (about 2–3 miles)', time: '20–25 min' },
       { text: '3 min cooldown walk', time: '3 min' },
       { text: 'Light stretch + hydrate', time: '3 min' }
     ];
@@ -2078,6 +2070,48 @@ function addFourthRunDayToWeek(weekDays) {
 
   Object.keys(byWeek).forEach(function(weekKey){
     addFourthRunDayToWeek(byWeek[weekKey]);
+  });
+})();
+
+(function applyOutdoorRunRules() {
+  var firstPost10kLongRunUpdated = false;
+
+  planDays.forEach(function(day) {
+    if (day.type !== 'run' && day.type !== 'longrun') return;
+
+    // Outside-only runs: remove alternate treadmill/iFIT content.
+    delete day.steadyMoto;
+    delete day.steadySteps;
+
+    if (day.type === 'run') {
+      day.intervals = '60s RUN / 30s WALK';
+      return;
+    }
+
+    day.intervals = '30s RUN / 30s WALK';
+
+    if (day.steps && day.steps.length) {
+      day.steps = day.steps.map(function(step) {
+        if (!step.text) return step;
+        return Object.assign({}, step, {
+          text: step.text
+            .replace(/60s run\s*\/\s*30s walk/ig, '30s run / 30s walk')
+            .replace(/60s RUN\s*\/\s*30s WALK/g, '30s RUN / 30s WALK')
+        });
+      });
+    }
+
+    if (!firstPost10kLongRunUpdated && day.date > '2026-06-13') {
+      firstPost10kLongRunUpdated = true;
+      day.title = 'LONG RUN · 6 MI';
+      day.distance = '6 miles';
+      day.duration = '~80–90 min';
+      day.moto = 'Long run starts at 6 miles. Keep it outside, relaxed, and consistent.';
+      if (day.steps && day.steps.length >= 2) {
+        day.steps[1].text = 'Run 6 miles outside';
+        day.steps[1].time = '70–80 min';
+      }
+    }
   });
 })();
 
@@ -2392,8 +2426,8 @@ function renderWorkout() {
   var isDone = state[activeDate] && state[activeDate].done;
   var isSkipped = state[activeDate] && state[activeDate].skipped;
   var checkedSteps = (state[activeDate] && state[activeDate].steps) || {};
-  var hasRunMode = day.steadySteps && day.steadySteps.length > 0;
-  var currentMode = (state[activeDate] && state[activeDate].mode) || 'galloway';
+  var hasRunMode = false;
+  var currentMode = 'galloway';
 
   // MODE TOGGLE (for run/longrun days with both modes)
   var toggleHTML = '';
@@ -2422,9 +2456,8 @@ function renderWorkout() {
     var blocks = '';
     for (var r = 0; r < reps; r++) { blocks += '<div class="iblock run"></div><div class="iblock walk"></div>'; }
     blocks += '<span style="font-family:Bangers,cursive;font-size:18px;color:var(--ink);align-self:center;margin-left:4px">\u00B7\u00B7\u00B7</span>';
-    intervalHTML = '<div class="interval-visual"><div class="interval-label">\u26A1 INTERVAL PATTERN:</div><div class="interval-blocks">' + blocks + '</div><div class="interval-legend"><span><span class="ileg-dot" style="background:var(--red)"></span>60s RUN</span><span><span class="ileg-dot" style="background:var(--blue);opacity:0.7"></span>30s WALK</span></div></div>';
-  } else if ((day.type === 'run' || day.type === 'longrun') && currentMode === 'steady') {
-    intervalHTML = '<div class="interval-visual"><div class="interval-label">\uD83D\uDCF1 IFIT RUN:</div><div class="interval-blocks"><div class="iblock steady"></div></div><div class="interval-legend"><span><span class="ileg-dot" style="background:var(--green)"></span>IFIT GUIDED PACE</span></div></div>';
+    var runInterval = day.type === 'longrun' ? '30s RUN' : '60s RUN';
+    intervalHTML = '<div class="interval-visual"><div class="interval-label">\u26A1 INTERVAL PATTERN:</div><div class="interval-blocks">' + blocks + '</div><div class="interval-legend"><span><span class="ileg-dot" style="background:var(--red)"></span>' + runInterval + '</span><span><span class="ileg-dot" style="background:var(--blue);opacity:0.7"></span>30s WALK</span></div></div>';
   }
 
   // DISTANCE BADGE
